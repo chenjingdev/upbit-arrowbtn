@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "방향키 이벤트 추가",
-  "version": "1.0",
+  "name": "업비트 방향키 종목 조회",
+  "version": "1.1",
   "description": "활성화된 페이지에 방향키 이벤트를 추가하는 확장 프로그램",
   "permissions": [
     "activeTab"
