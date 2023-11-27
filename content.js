@@ -1,6 +1,6 @@
-if (window.location.href.includes("https://upbit.com/exchange")) {
-  document.addEventListener("keydown", handleKeyDown);
-  function handleKeyDown(event) {
+document.addEventListener("keydown", handleKeyDown);
+function handleKeyDown(event) {
+  if (window.location.href.includes("https://upbit.com/exchange")) {
     const parentCustomElement = document.querySelector(".scrollB > div > div");
     const target = document.querySelector(".scrollB table tr.on");
     const targetTop = target.offsetTop;
@@ -22,7 +22,9 @@ if (window.location.href.includes("https://upbit.com/exchange")) {
         break;
     }
   }
+}
 
+if (window.location.href.includes("https://upbit.com/exchange")) {
   chrome.runtime.sendMessage({ action: "contentScriptLoaded" }, function () {
     const intervalId = setInterval(scrollToTarget, 10);
 
@@ -31,9 +33,9 @@ if (window.location.href.includes("https://upbit.com/exchange")) {
         ".scrollB > div > div"
       );
       const target = document.querySelector(".scrollB table tr.on");
-      const textDectect = document.querySelector(".percent em")?.innerText;
+      const textDectect = document.querySelector(".percent p")?.innerText;
 
-      if (!textDectect) return;
+      if (textDectect === "-") return;
       if (isScrollAtBottom()) {
         clearInterval(intervalId);
         return;
