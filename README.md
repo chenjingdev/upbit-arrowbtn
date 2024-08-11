@@ -20,4 +20,3 @@
 ### 주요 기술
 - **JavaScript**: 핵심 로직 작성
 - **Chrome Extensions API**: 크롬 확장 프로그램 구현
-- **HTML/CSS**: 간단한 UI 구성 및 스타일링
